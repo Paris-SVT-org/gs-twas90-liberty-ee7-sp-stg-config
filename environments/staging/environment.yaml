@@ -1,5 +1,5 @@
 #
-# Configuration for environment to test server package with usr option staging version 2
+# Configuration for environment to test server package with usr option staging version 3
 #
 version: 1.0
 app:
