@@ -77,17 +77,17 @@ app:
   #    value: "cf2ff435-a353-4e74-b383-986c23dddd2f"
   systemProperties:
     - name: GarageSaleCCManagerService.endPoint.Address
-      value: 'https://easej-jag-dev-1:9443/CreditCardEJB/GarageSaleCCManagerService'
+      value: 'https://easej-jag-stg-sp-usr:9443/CreditCardEJB/GarageSaleCCManagerService'
     - name: GarageSaleStoreManagerService.endPoint.Address
-      value: 'https://easej-jag-dev-1:9443/GarageSaleEJB/GarageSaleStoreManagerService'
+      value: 'https://easej-jag-stg-sp-usr:9443/GarageSaleEJB/GarageSaleStoreManagerService'
     - name: GarageSaleBankManagerService.endPoint.Address
-      value: 'https://easej-jag-dev-1:9443/WSBankEJB/GarageSaleBankManagerService'
+      value: 'https://easej-jag-stg-sp-usr:9443/WSBankEJB/GarageSaleBankManagerService'
     - name: GarageSaleProductShipService.endPoint.Address
-      value: 'https://easej-jag-dev-1:9443/GSjsf20LibertyWeb'
+      value: 'https://easej-jag-stg-sp-usr:9443/GSjsf20LibertyWeb'
     - name: GarageSaleWebSocket.endPoint.Address
-      value: 'wss://easej-jag-dev-1:9443/GSjsf20LibertyWeb'
+      value: 'wss://easej-jag-stg-sp-usr:9443/GSjsf20LibertyWeb'
     - name: PersonaPMIMetrics.endPoint.Address
-      value: 'wss://easej-jag-dev-1:9443/WASPersonaWebServicesPMIWeb'
+      value: 'wss://easej-jag-stg-sp-usr:9443/WASPersonaWebServicesPMIWeb'
     - name: GarageSale.Product.Videos.Cache.Size
       value: '20'
     - name: GarageSale.Enable.Dashboard.Metrics
