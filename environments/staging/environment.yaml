@@ -1,0 +1,100 @@
+#
+# Configuration for environment to test server package with usr option version 3
+#
+version: 1.0
+app:
+
+  maven:
+    groupId: com.ibm.ws.svt.gs.twas90.liberty.ease4j.garagesale-ee7
+    artifactId: GarageSaleRuntimeUtil
+    version: "0.0.1-SNAPSHOT"
+    type: zip
+
+  # build id to deploy. if 'version' is commented out, the application is not deployed
+
+  #version: "258a64a4-843d-4755-860d-75315942fac8"
+  # version: ""
+  
+  
+  # number of instances
+  instances:
+    # min number of instances. can be 0 for scale to 0. default to 1.
+    min: 3
+    
+    # max number of instances. defaults to 1 if min == 0, otherwise defaults to min
+    max: 6
+    
+  resources:
+    # max cpu. memory limit is based on cpu value: 1:4 memory ratio, e.g. 1 cpu == 4 gb
+    cpu: 1
+  java: 8
+
+  # To get an external URL to access the application
+  endpoints: public
+  
+  # List of environment variables that are set for the application
+  env:
+    - name: QS_SECURITY_USERNAME
+      value: admin
+    - name: APP_GSDB_NAME
+      value: GSDB
+    - name: APP_GSDB_HOSTNAME
+      value: easej-svt-vm.purple-mystic-butterfly.com
+    - name: APP_GSDB_PORT
+      value: "60015"
+    - name: APP_GSDB_USER
+      value: db2inst1
+    - name: APP_CCDB_NAME
+      value: CCDB
+    - name: APP_CCDB_HOSTNAME
+      value: easej-svt-vm.purple-mystic-butterfly.com
+    - name: APP_CCDB_PORT
+      value: "60015"
+    - name: APP_CCDB_USER
+      value: db2inst1
+    - name: APP_WSBANKDB_NAME
+      value: WSBANKDB
+    - name: APP_WSBANKDB_HOSTNAME
+      value: easej-svt-vm.purple-mystic-butterfly.com
+    - name: APP_WSBANKDB_PORT
+      value: "60015"
+    - name: APP_WSBANKDB_USER
+      value: db2inst1
+    - name: APP_SESSIONDB_NAME
+      value: SESSIONS
+    - name: APP_SESSIONDB_HOSTNAME
+      value: easej-svt-vm.purple-mystic-butterfly.com
+    - name: APP_SESSIONDB_PORT
+      value: "60025"
+    - name: APP_SESSIONDB_USER
+      value: db2inst1
+
+  # List of variables that can be referenced in the server.xml
+  #variables:
+  #  - name: discoveryEndpoint
+  #    value: "https://rhaque-12022024.verify.ibm.com/oidc/endpoint/default/.well-known/openid-configuration"
+  #  - name: clientId
+  #    value: "cf2ff435-a353-4e74-b383-986c23dddd2f"
+  systemProperties:
+    - name: GarageSaleCCManagerService.endPoint.Address
+      value: 'https://easej-jag-dev-1:9443/CreditCardEJB/GarageSaleCCManagerService'
+    - name: GarageSaleStoreManagerService.endPoint.Address
+      value: 'https://easej-jag-dev-1:9443/GarageSaleEJB/GarageSaleStoreManagerService'
+    - name: GarageSaleBankManagerService.endPoint.Address
+      value: 'https://easej-jag-dev-1:9443/WSBankEJB/GarageSaleBankManagerService'
+    - name: GarageSaleProductShipService.endPoint.Address
+      value: 'https://easej-jag-dev-1:9443/GSjsf20LibertyWeb'
+    - name: GarageSaleWebSocket.endPoint.Address
+      value: 'wss://easej-jag-dev-1:9443/GSjsf20LibertyWeb'
+    - name: PersonaPMIMetrics.endPoint.Address
+      value: 'wss://easej-jag-dev-1:9443/WASPersonaWebServicesPMIWeb'
+    - name: GarageSale.Product.Videos.Cache.Size
+      value: '20'
+    - name: GarageSale.Enable.Dashboard.Metrics
+      value: 'true'
+    - name: GarageSale.Enable.WebSockets.Concurrency
+      value: 'true'
+    - name: WSAT_ROLLBACK_CC
+      value: 'false'
+    - name: WSAT_ROLLBACK_WSBANK
+      value: 'false'
